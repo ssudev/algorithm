@@ -31,14 +31,15 @@ for i in range(e):
     a,b = map(int, input().split())
     union_parent(parent, a, b)
 
-print('각 원소가 속한 집합: ', end='')
-# 각 원소가 속한 집합 출력
-for i in range(1, v+1):
-    print(find_parent(parent, i), end= ' ')
-print()
+c = parent[1]
+cycle = True
 
-# 부모 테이블 내용 출력
-print('부모 테이블: ', end='')
-# 각 원소가 속한 집합 출력
-for i in range(1, v+1):
-    print(parent[i], end=' ')
+for i in range(1, v + 1):
+    if c != parent[i]:
+        cycle = False
+        break
+
+if cycle:
+    print("싸이클")
+else:
+    print("no 싸이클")
