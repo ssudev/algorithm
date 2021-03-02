@@ -7,3 +7,4 @@
 <div>
     <img src="image1.PNG" width="400" height="150">
 </div>
+- 크루스칼 알고리즘은 간선의 개수가 E개일 때, O(ElogE)의 시간 복잡도를 갖는다.
