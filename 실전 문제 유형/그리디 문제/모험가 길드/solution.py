@@ -1,18 +1,15 @@
 n = int(input())
 
 array = list(map(int, input().split()))
-max_sort_array = sorted(array, reverse=True)
+array.sort()
 
 result = 0
+count = 0
 
-for max_num in max_sort_array:
-    
-    if n > 0:
-        n -= max_num
-
-        if n >= 0:
-            result += 1
-        else:
-            break
+for i in array:
+    count += 1
+    if count >= i:
+        result += 1
+        count = 0
 
 print(result)
