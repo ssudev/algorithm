@@ -16,14 +16,12 @@ def solution(food_times, k):
         sum_time += (now_time-pre_time) * n
         pre_time = now_time
         n -= 1
-
-        print(now_time, sum_time, pre_time, n)
     
         if not q:
             return -1
     
     result = sorted(q, key=lambda x:x[1])
-    
+
     return result[(k-sum_time)%len(q)][1]
 
-print(solution([3,1,2], 5))
+print(solution([3,1,2], 4))
