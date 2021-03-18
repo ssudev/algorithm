@@ -5,14 +5,17 @@ result = 1000
 for i in range(1,length//2+1):
     patten = ""
     cnt = 1
-    for j in range(0, length - i, i):
-        if n[j:j+i] == n[j+i:j+2*i]:
+    pre = n[0:i]
+    for j in range(i, length, i):
+        if pre == n[j:j+i]:
             cnt += 1
         else:
-            if cnt == 1:
-                patten += n[j:j+i]
-            else:
-                patten += str(cnt) + n[j:j+i]
-            
+            patten += str(cnt) + pre if cnt > 1 else pre
+            pre = n[j:j+i]
             cnt = 1
-    print(patten, cnt)
+    
+    # 남아있는 마지막 문자열 처리
+    patten += str(cnt) + pre if cnt > 1 else pre
+    result = min(result, len(patten))
+
+print(result)
