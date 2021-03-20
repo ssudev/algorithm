@@ -50,8 +50,3 @@ def solution(key, lock):
 key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
 lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
 solution(key, lock)
-
-
-new_lock = [[0]*4 for _ in range(1)]
-print(new_lock)
-print(len(new_lock))
